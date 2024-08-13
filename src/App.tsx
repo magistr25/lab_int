@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header";
 import StepGuide from "./components/StepGuide";
+import Info from "./components/Info";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 </button>
             </div>
             <StepGuide />
+            <Info />
         </div>
     );
 }
