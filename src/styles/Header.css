@@ -1,0 +1,43 @@
+/* Основные стили для header */
+.header {
+    position: absolute; /* Позиционирование поверх изображения */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+
+
+}
+
+.header__container {
+    width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    /* Возможно, добавьте немного отступа, чтобы логотип не был прижат к краям */
+    margin-left: 380px;
+}
+
+.logo__icon {
+    width: 120px; /* Заданная ширина логотипа */
+    height: 24px; /* Заданная высота логотипа */
+    object-fit: contain; /* Сохранение пропорций изображения */
+}
+
+.logo__text {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
