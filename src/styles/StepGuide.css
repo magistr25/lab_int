@@ -1,0 +1,49 @@
+.step-guide {
+    width: 1216px;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.step-guide__title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.step-guide__steps {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1216px;
+    margin: 0 auto;
+}
+
+.step-guide__step {
+    max-width: 304px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.step-guide__icon {
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.step-guide__step-title {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step-guide__step-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}

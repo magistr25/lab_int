@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from "./components/Header";
+import StepGuide from "./components/StepGuide";
 
 function App() {
     return (
@@ -12,8 +13,7 @@ function App() {
                     Проще простого!
                 </button>
             </div>
-            <>
-            </>
+            <StepGuide />
         </div>
     );
 }

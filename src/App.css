@@ -38,29 +38,27 @@
 }
 .hero-section {
   position: relative;
-  width: 100%;
+  width: 1920px;
   height: 960px; /* Высота соответствует изображению */
   overflow: hidden;
 }
 
 .hero-section__image {
-  width: 100%;
+  width: 1920px;
   height: 100%;
   object-fit: cover; /* Обеспечивает покрытие всей области */
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Размещает изображение на заднем плане */
+  z-index: -1;
 }
 /* Основные стили для App */
 .app {
   position: relative;
+  width: 1920px;;
 }
 
 /* Стили для секции с изображением */
-.hero-section {
-  position: relative; /* Относительное позиционирование для контейнера */
-}
 
 .hero-section__image {
   width: 100%;
@@ -70,27 +68,26 @@
 
 /* Кастомные стили для кнопки */
 .btn-custom {
-  background-color: #f0f4f7; /* Серый фон */
-  color: #212529; /* Черный текст */
+  position: absolute;
+  background-color: #f0f4f7;
+  color: #212529;
   border: none;
-  padding: 10px 20px; /* Отступы внутри кнопки */
-  font-weight: bold; /* Жирный текст */
-  border-radius: 6px; /* Закругленные углы */
-  position: absolute; /* Абсолютное позиционирование */
-  top: 615px; /* Позиция по вертикали */
-  left: 50%; /* Позиция по горизонтали */
-  transform: translate(-50%, -50%); /* Центрирование кнопки */
+  padding: 10px 20px;
+  font-weight: bold;
+  top: 615px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 259px;
   height: 65px;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 18px;
 }
 
-/* Кнопка меняет цвет при наведении */
+
 .btn-custom:hover {
-  background-color: #e0e6ea; /* Темнее при наведении */
+  background-color: #e0e6ea;
 }
 .btn-custom:active {
-  background-color: #d6d8db; /* Еще темнее при нажатии */
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Внутренняя тень для эффекта нажатия */
+  background-color: #d6d8db;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
