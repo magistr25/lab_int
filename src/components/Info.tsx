@@ -10,8 +10,8 @@ const Info = () => {
                 <p className="info__paragraph">Доступ к заработанным денгам помогает отказаться от кредитов и <br/> экономить деньги на процентах и штрафах</p>
             </div>
             <div className="info__image-container">
-                <img className="info__image info__image--front" src="info.png" alt=""/>
-                <img className="info__image info__image--back" src="info2.png" alt=""/>
+                <img className="info__image info__image--front" src="/info.png" alt=""/>
+                <img className="info__image info__image--back" src="/info2.png" alt=""/>
             </div>
         </div>
     );

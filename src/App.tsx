@@ -10,7 +10,7 @@ function App() {
         <div className="app">
             <Header/>
             <div className="hero-section">
-                <img src="background.png" alt="Hero Background" className="hero-section__image"/>
+                <img className="hero-section__image" src="/background.png" alt="Hero Background" />
                 <button className="btn btn-custom">
                     Проще простого!
                 </button>

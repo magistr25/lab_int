@@ -96,29 +96,26 @@ const Slider: React.FC = () => {
             <div className="slider">
                 <h1 className="slider__title">Отзывы</h1>
                 <button className="slider__arrow-left" onClick={handlePrevClick}>
-                    <img src="arrow-left.png" alt="Previous" />
+                    <img src="/arrow-left.png" alt="Previous" />
                 </button>
                 <button className="slider__arrow-right" onClick={handleNextClick}>
-                    <img src="arrow-right.png" alt="Next" />
+                    <img src="/arrow-right.png" alt="Next" />
                 </button>
                 <div className="slider__carousel">
                     <div className="slider__item-group">
                         {getVisibleTestimonials().map((testimonial, idx) => (
                             <div className="slider__item" key={idx}>
                                 <div className="slider__card">
-                                    <div className="slider__avatar">
-                                        <img
-                                            src={testimonial.avatar ? testimonial.avatar : 'MockPhoto.png'}
-                                            alt={testimonial.name}
-                                            width="341"
-                                            height="316"
-                                        />
+                                    <div className="slider__header">
+                                        <div className="slider__avatar">
+                                            <img src={testimonial.avatar ? testimonial.avatar : '/MockPhoto.png'} alt={testimonial.name} />
+                                        </div>
+                                        <div className="slider__info">
+                                            <h3 className="slider__name">{testimonial.name}</h3>
+                                            <p className="slider__location">{testimonial.location}</p>
+                                        </div>
                                     </div>
-                                    <div className="slider__info">
-                                        <h3 className="slider__name">{testimonial.name}</h3>
-                                        <p className="slider__location">{testimonial.location}</p>
-                                        <p className="slider__review">{testimonial.review}</p>
-                                    </div>
+                                    <p className="slider__review">{testimonial.review}</p>
                                 </div>
                             </div>
                         ))}
