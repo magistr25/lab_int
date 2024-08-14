@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../styles/Nav.css'; // Подключение пользовательских стилей, если необходимо
 
 const Nav = () => {
@@ -6,24 +7,44 @@ const Nav = () => {
         <nav className="nav justify-content-center bg-primary py-2">
             <ul className="nav__list d-flex justify-content-around">
                 <li className="nav__item">
-                    <a href="#" className="nav__link">
+                    <NavLink
+                        to="/how-it-works"
+                        className={({ isActive }) =>
+                            isActive ? "nav__link nav__link--active" : "nav__link"
+                        }
+                    >
                         Как это работает?
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className="nav__link">
+                    <NavLink
+                        to="/block-3"
+                        className={({ isActive }) =>
+                            isActive ? "nav__link nav__link--active" : "nav__link"
+                        }
+                    >
                         3-й блок
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className="nav__link">
-                       Вопросы и ответы
-                    </a>
+                    <NavLink
+                        to="/faq"
+                        className={({ isActive }) =>
+                            isActive ? "nav__link nav__link--active" : "nav__link"
+                        }
+                    >
+                        Вопросы и ответы
+                    </NavLink>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className="nav__link">
+                    <NavLink
+                        to="/form"
+                        className={({ isActive }) =>
+                            isActive ? "nav__link nav__link--active" : "nav__link"
+                        }
+                    >
                         Форма
-                    </a>
+                    </NavLink>
                 </li>
             </ul>
         </nav>
@@ -31,4 +52,7 @@ const Nav = () => {
 };
 
 export default Nav;
+
+
+
 

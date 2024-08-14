@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header";
 import StepGuide from "./components/StepGuide";
 import Info from "./components/Info";
+import Slider from "./components/Slider";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             </div>
             <StepGuide />
             <Info />
+            <Slider />
         </div>
     );
 }

@@ -32,3 +32,8 @@
     height: 24px;
     object-fit: contain;
 }
+.nav__link--active {
+
+    color: #ffffff; /* Активная ссылка будет белой */
+    text-decoration: underline; /* Подчёркивание активной ссылки */
+}
