@@ -38,10 +38,12 @@
 
 .slider__arrow-left {
     left: 10px;
+    margin: -14px;
 }
 
 .slider__arrow-right {
     right: 10px;
+    margin: -14px;
 }
 
 .slider__carousel_inner {

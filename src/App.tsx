@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import StepGuide from "./components/StepGuide";
 import Info from "./components/Info";
 import Slider from "./components/Slider";
+import Questions from "./components/Questions";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
             <StepGuide />
             <Info />
             <Slider />
+            <Questions />
         </div>
     );
 }
