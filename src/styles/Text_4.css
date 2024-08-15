@@ -8,6 +8,7 @@
 }
 
 .text4__container {
+
     width: 1216px;
     height: 527px;
     display: grid;
@@ -20,13 +21,18 @@
     font-size: 17px;
     line-height: 1.7;
     color: #333;
+
 }
 
 .text4__title {
     margin: 10px 0;
+    display: flex;
+    justify-content: start;
 }
 
 .text4__content {
     margin: 0;
+    display: block;
+    text-align: left;
 }
 

@@ -31,21 +31,37 @@
 
 .form__label {
     margin-top: 0;
-    font-size: 16px;
+
     display: flex;
     align-items: center;
 }
 
 .form__input {
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
+    color: rgba(94, 100, 106, 1);
     border: none;
     background: rgba(246, 248, 250, 1);
     border-radius: 4px;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    font-size: 18px;
+    position: relative;
+}
+
+.form__input:focus {
+    border: 1px solid rgba(194, 200, 205, 1);
+    outline: none;
+    background: white;
+    padding-left: 20px;
+
+}
+
+.form__input:active {
+    border: 1px solid rgba(194, 200, 205, 1);
+    outline: none;
+
+
 }
 
 .form__checkbox {
@@ -62,9 +78,18 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 400px;
+    width: 384px;
     height: 64px;
     max-width: 100%; /* Предотвращает превышение ширины контейнера */
+}
+
+.form__button:hover {
+    background-color: #0056b3; /* Более темный оттенок при наведении */
+}
+
+.form__button:active {
+    background-color: #007bff;
+    transform: scale(0.98); /* Легкое уменьшение размера кнопки при нажатии для эффекта */
 }
 
 .form__actions {
@@ -76,7 +101,88 @@
 }
 
 
-.form__button:hover {
-    background-color: #0056b3;
+
+
+
+.form__input:focus {
+    border: 1px solid rgba(194, 200, 205, 1);
+    outline: none;
+    background: white;
+}
+.form__label--floating {
+    position: absolute;
+    z-index: 100;
+    top: 0%;
+    left: -10px;
+    font-size: 18px;
+    color: black;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+
+}
+.form__group {
+    display: flex;
+    flex-direction: column; /* Размещаем лейбл над полем ввода */
+    align-items: flex-start;
+    gap: 5px; /* Отступ между лейблом и полем ввода */
+    width: 384px;
+    height: 64px;
+}
+
+.form__label {
+    font-size: 16px;
+    color: black;
+}
+
+.form__input {
+    padding: 10px;
+    border: 1px solid rgba(194, 200, 205, 1); /* Добавление границы для поля ввода */
+    background: rgba(246, 248, 250, 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+
+}
+
+.form__input:focus {
+    border: 1px solid rgba(194, 200, 205, 1);
+    outline: none;
+    background: white;
+}
+.form__group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form__input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgba(194, 200, 205, 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    background: rgba(246, 248, 250, 1);
+}
+
+.form__label--floating {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(246, 248, 250, 1);
+    padding: 0 5px;
+    color: rgba(150, 150, 150, 1);
+    transition: all 0.3s ease;
+    pointer-events: none; /* Чтобы текст лейбла не мешал клику по полю */
+}
+
+.form__input:focus + .form__label--floating,
+.form__input:not(:placeholder-shown) + .form__label--floating {
+    top: 20%;
+    left: 10px;
+    font-size: 14px;
+    background-color: white;
+    padding: 0 5px;
 }
 
