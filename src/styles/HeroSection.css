@@ -18,7 +18,7 @@
 /* Кастомные стили для кнопки */
 .btn-custom {
     position: absolute;
-    background-color: #f0f4f7;
+
     color: #212529;
     border: none;
     padding: 10px 20px;
@@ -30,13 +30,15 @@
     height: 65px;
     border-radius: 5px;
     font-size: 18px;
+    background: transparent;
 }
 
 .btn-custom:hover {
-    background-color: #e0e6ea;
+    background: rgba(128, 128, 128, 0.2); /* Прозрачный серый фон */
 }
 
 .btn-custom:active {
-    background-color: #d6d8db;
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    background: rgba(128, 128, 128, 0.2); /* Прозрачный серый фон при нажатии */
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Внутренняя тень при нажатии */
+
 }

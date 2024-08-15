@@ -1,15 +1,18 @@
 .slider-container {
     width: 1920px;
-    height: 564px;
+    height: 560px;
     background: rgba(246, 248, 250, 1);
+    margin: 80px auto;
+}
 
-    h1 {
-        font-size: 38px;
-    }
+.slider-container h1 {
+    font-size: 40px;
+    margin: 20px auto 40px auto;
+    font-weight: bold;
 }
 
 .slider {
-    width: 1130px;
+    width: 1140px;
     height: 462px;
     padding: 40px 20px;
     background: rgba(246, 248, 250, 1);
@@ -23,13 +26,11 @@
 .slider__arrow-left,
 .slider__arrow-right {
     position: absolute;
-    top: 60%;
+    top: 70%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    color: white;
     font-size: 24px;
-    margin: -20px;
     cursor: pointer;
     z-index: 1000;
     opacity: 1;
@@ -37,43 +38,23 @@
 }
 
 .slider__arrow-left {
-    left: 10px;
-    margin: -14px;
+    top: 65%;
+    left: -12px;
 }
 
 .slider__arrow-right {
-    right: 10px;
-    margin: -14px;
-}
-
-.slider__carousel_inner {
-    width: 1200px;
-}
-
-.slider__carousel .carousel-inner {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    border: none;
-}
-
-.carousel-item {
-    display: none;
-    flex: 1 0 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-item.active {
-    display: flex;
+    top: 65%;
+    right: -12px;
 }
 
 .slider__item-group {
     display: flex;
     justify-content: center;
     width: 100%;
+    height: auto;
+    margin-bottom: 60px; /* Дополнительное пространство под карточками */
     will-change: transform;
+    transition: transform 0.3s ease-in-out;
 }
 
 .slider__item {
@@ -84,10 +65,10 @@
 
 .slider__card {
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 -4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     width: 341px;
-    height: 316px;
+    height: 290px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -141,59 +122,20 @@
     margin-top: 10px;
 }
 
-
-.slider__indicators {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.slider__dot {
-    width: 10px;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.slider__dot.active {
-    background-color: #007bff;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon,
-.carousel-indicators {
-    visibility: hidden;
-}
-
-.visually-hidden {
-    color: rgba(0, 0, 0, 0);
-    display: none;
-}
-
-button {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.slider__item.hidden {
-    display: none;
-}
-.slider__item-group.transition {
-    transition: transform 0.3s ease-in-out;
-}
-/* Стили для точек */
 .slider__dots {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    z-index: 1000;
 }
 
 .slider__dot {
     width: 10px;
     height: 10px;
-    margin: 30px 5px;
+    margin: 0 5px;
     border-radius: 50%;
     background-color: #d3d3d3;
     cursor: pointer;
@@ -203,3 +145,4 @@ button {
 .slider__dot.active {
     background-color: #007bff;
 }
+

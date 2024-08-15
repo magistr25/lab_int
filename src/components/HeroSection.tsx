@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
         <div className="hero-section">
             <img className="hero-section__image" src="/background.png" alt="Hero Background" />
             <button className="btn btn-custom" onClick={handleClick}>
-                Проще простого!
+
             </button>
         </div>
     );

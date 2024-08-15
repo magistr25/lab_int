@@ -4,7 +4,7 @@ import '../styles/Nav.css';
 
 const Nav: React.FC = () => {
     return (
-        <nav className="nav justify-content-center bg-primary py-2">
+        <nav className="nav justify-content-center py-2">
             <ul className="nav__list d-flex justify-content-around">
                 <li className="nav__item">
                     <NavLink

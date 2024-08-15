@@ -36,16 +36,16 @@
 }
 .question-item:hover,
 .question-item:hover .question-header button {
-    color: #007bff; /* Зеленый цвет */
-    border-color: #007bff; /* Зеленый цвет для границы кнопки */
+    color: #007bff;
+    border-color: #007bff;
 }
 
 .question-item:hover {
-    border-bottom: 1px solid #d3d3d3; /* Сохранение прежнего цвета линии при наведении */
+    border-bottom: 1px solid #d3d3d3;
 }
 
 .question-item:last-child {
-    border-bottom: none; /* Убирает нижнюю линию у последнего блока */
+    border-bottom: none;
 }
 
 
@@ -60,24 +60,22 @@
     font-size: 18px;
     font-weight: bold;
     margin: 0;
-
 }
 
-
-
-button {
+.question-header button {
     width: 24px;
     height: 24px;
-    border-radius: 50%;
     font-size: 18px;
     font-weight: bold;
     border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: -25px;
     background-color: transparent;
     cursor: pointer;
+    border-radius: 50%;
+    padding-bottom: 5px;
+
 }
 
 .question-answer {
