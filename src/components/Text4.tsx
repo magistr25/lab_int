@@ -36,7 +36,7 @@ const blocksContent = [
     </>
 ];
 
-const Text_4: React.FC = () => {
+const Text4: React.FC = () => {
     return (
         <div className="text4">
             <div className="text4__container">
@@ -51,5 +51,5 @@ const Text_4: React.FC = () => {
     );
 }
 
-export default Text_4;
+export default Text4;
 

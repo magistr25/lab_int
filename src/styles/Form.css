@@ -26,7 +26,7 @@
 .form__group {
     display: flex;
     align-items: flex-start; /* Выровнять элементы по верхнему краю */
-    gap: 10px;
+    gap: 30px;
 }
 
 .form__label {
@@ -51,6 +51,7 @@
 .form__checkbox {
     width: 24px;
     height: 24px;
+    margin-right: 10px;
 }
 
 .form__button {

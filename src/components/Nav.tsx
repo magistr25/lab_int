@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../styles/Nav.css'; // Подключение пользовательских стилей, если необходимо
+import '../styles/Nav.css';
 
-const Nav = () => {
+const Nav: React.FC = () => {
     return (
         <nav className="nav justify-content-center bg-primary py-2">
             <ul className="nav__list d-flex justify-content-around">
@@ -52,6 +52,7 @@ const Nav = () => {
 };
 
 export default Nav;
+
 
 
 

@@ -3,7 +3,7 @@ import '../styles/Header.css';
 import Logo from './Logo';
 import Nav from './Nav';
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <header className="header">
             <div className="header__container">

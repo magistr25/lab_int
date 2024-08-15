@@ -1,0 +1,42 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 960px; /* Высота соответствует изображению */
+    overflow: hidden;
+}
+
+.hero-section__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Обеспечивает покрытие всей области */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Кастомные стили для кнопки */
+.btn-custom {
+    position: absolute;
+    background-color: #f0f4f7;
+    color: #212529;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 259px;
+    height: 65px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.btn-custom:hover {
+    background-color: #e0e6ea;
+}
+
+.btn-custom:active {
+    background-color: #d6d8db;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
