@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(246, 248, 250, 1);
 }
 
 .text4__container {

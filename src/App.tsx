@@ -6,6 +6,9 @@ import Info from "./components/Info";
 import Slider from "./components/Slider";
 import Questions from "./components/Questions";
 import Text_4 from "./components/Text_4";
+import Form from "./components/Form";
+import Footer from "./components/Footer";
+
 
 function App() {
     return (
@@ -22,6 +25,8 @@ function App() {
             <Slider />
             <Questions />
             <Text_4 />
+            <Form />
+            <Footer />
         </div>
     );
 }
