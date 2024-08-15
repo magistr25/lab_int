@@ -1,0 +1,31 @@
+.text4 {
+    width: 1920px;
+    height: 662px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text4__container {
+    width: 1216px;
+    height: 527px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.text4__block {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.text4__title {
+    margin: 10px 0;
+}
+
+.text4__content {
+    margin: 0;
+}
+

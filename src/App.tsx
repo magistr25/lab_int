@@ -5,6 +5,7 @@ import StepGuide from "./components/StepGuide";
 import Info from "./components/Info";
 import Slider from "./components/Slider";
 import Questions from "./components/Questions";
+import Text_4 from "./components/Text_4";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             <Info />
             <Slider />
             <Questions />
+            <Text_4 />
         </div>
     );
 }
