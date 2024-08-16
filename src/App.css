@@ -2,7 +2,7 @@
 .app {
   text-align: center;
   position: relative;
-  width: 100%;  /* Изменим ширину на 100%, чтобы она адаптировалась к размеру экрана */
+  width: 100%;
 }
 
 .App-header {
