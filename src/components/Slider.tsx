@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import { nextSlide, prevSlide, setSlideIndex } from '../redux/sliderSlice';
 import '../styles/Slider.css';
+import defaultAvatar from '../assets/MockPhoto.png'; // Дефолтный аватар
+import arrowLeft from '../assets/arrow-left.png';  // Импортируем изображения
+import arrowRight from '../assets/arrow-right.png';
 
 const Slider: React.FC = () => {
     const itemsPerPage = 3;
@@ -40,26 +43,26 @@ const Slider: React.FC = () => {
             <div className="slider">
                 <h1 className="slider__title">Отзывы</h1>
                 <button className="slider__arrow-left" onClick={handlePrevClick}>
-                    <img src="/arrow-left.png" alt="Previous" />
+                    <img src={arrowLeft} alt="Previous" />
                 </button>
                 <button className="slider__arrow-right" onClick={handleNextClick}>
-                    <img src="/arrow-right.png" alt="Next" />
+                    <img src={arrowRight} alt="Next" />
                 </button>
                 <div className="slider__carousel">
                     <div className="slider__item-group">
-                        {getVisibleData().map((data, idx) => (
+                        {getVisibleData().map((item, idx) => (
                             <div className="slider__item" key={idx}>
                                 <div className="slider__card">
                                     <div className="slider__header">
                                         <div className="slider__avatar">
-                                            <img src={data.avatar ? data.avatar : '/MockPhoto.png'} alt={data.name} />
+                                            <img src={item.avatar ? item.avatar : defaultAvatar} alt={item.name} />
                                         </div>
                                         <div className="slider__info">
-                                            <h3 className="slider__name">{data.name}</h3>
-                                            <p className="slider__location">{data.location}</p>
+                                            <h3 className="slider__name">{item.name}</h3>
+                                            <p className="slider__location">{item.location}</p>
                                         </div>
                                     </div>
-                                    <p className="slider__review">{data.review}</p>
+                                    <p className="slider__review">{item.review}</p>
                                 </div>
                             </div>
                         ))}

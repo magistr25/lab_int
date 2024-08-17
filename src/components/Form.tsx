@@ -43,6 +43,14 @@ const Form: React.FC = () => {
         dispatch(submitForm({ name, phone, agree: isAgreeChecked, disagree: isDisagreeChecked }));
     };
 
+    const handleClearName = () => {
+        dispatch(setName(''));
+    };
+
+    const handleClearPhone = () => {
+        dispatch(setPhone(''));
+    };
+
     // Определение классов для input полей
     const nameInputClass = name.trim() === '' ? '' : isNameValid ? 'valid' : 'invalid';
     const phoneInputClass = phone.trim() === '' ? '' : isPhoneValid ? 'valid' : 'invalid';
@@ -64,7 +72,11 @@ const Form: React.FC = () => {
                             />
                             <label htmlFor="inputName" className="form__label--floating">Имя</label>
                             <div className="form__status">
-                                <i className={`bi ${isNameValid ? 'bi-check-circle-fill text-success' : name.trim() === '' ? '' : 'bi-x-circle-fill text-danger'}`}></i>
+                                {isNameValid ? (
+                                    <i className="bi bi-check-circle-fill text-success"></i>
+                                ) : name.trim() === '' ? null : (
+                                    <i className="bi bi-x-circle-fill text-danger" onClick={handleClearName}></i>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -80,7 +92,11 @@ const Form: React.FC = () => {
                             />
                             <label htmlFor="inputPhone" className="form__label--floating">Телефон</label>
                             <div className="form__status">
-                                <i className={`bi ${isPhoneValid ? 'bi-check-circle-fill text-success' : phone.trim() === '' ? '' : 'bi-x-circle-fill text-danger'}`}></i>
+                                {isPhoneValid ? (
+                                    <i className="bi bi-check-circle-fill text-success"></i>
+                                ) : phone.trim() === '' ? null : (
+                                    <i className="bi bi-x-circle-fill text-danger" onClick={handleClearPhone}></i>
+                                )}
                             </div>
                         </div>
                     </div>
