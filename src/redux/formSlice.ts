@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 interface FormState {
     name: string;
@@ -8,6 +9,8 @@ interface FormState {
     isSubmitted: boolean;
     isNameValid: boolean;
     isPhoneValid: boolean;
+    submissionStatus: 'idle' | 'pending' | 'succeeded' | 'failed';
+    error: string | null;
 }
 
 const initialState: FormState = {
@@ -18,7 +21,22 @@ const initialState: FormState = {
     isSubmitted: false,
     isNameValid: false,
     isPhoneValid: false,
+    submissionStatus: 'idle',
+    error: null,
 };
+
+// Асинхронная санка для отправки формы
+export const submitForm = createAsyncThunk(
+    'form/submitForm',
+    async (formData: { name: string; phone: string; agree: boolean; disagree: boolean }, { rejectWithValue }) => {
+        try {
+            const response = await axios.post('https://URL', formData);
+            return response.data;
+        } catch (error) {
+            return rejectWithValue('Ошибка при отправке формы');
+        }
+    }
+);
 
 const formSlice = createSlice({
     name: 'form',
@@ -41,9 +59,6 @@ const formSlice = createSlice({
             state.isDisagreeChecked = action.payload;
             if (action.payload) state.isAgreeChecked = false;
         },
-        setSubmitted(state, action: PayloadAction<boolean>) {
-            state.isSubmitted = action.payload;
-        },
         resetForm(state) {
             state.name = '';
             state.phone = '';
@@ -52,9 +67,26 @@ const formSlice = createSlice({
             state.isSubmitted = false;
             state.isNameValid = false;
             state.isPhoneValid = false;
+            state.submissionStatus = 'idle';
+            state.error = null;
         },
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(submitForm.pending, (state) => {
+                state.submissionStatus = 'pending';
+                state.error = null;
+            })
+            .addCase(submitForm.fulfilled, (state) => {
+                state.submissionStatus = 'succeeded';
+                state.isSubmitted = true;
+            })
+            .addCase(submitForm.rejected, (state, action) => {
+                state.submissionStatus = 'failed';
+                state.error = action.payload as string;
+            });
     },
 });
 
-export const { setName, setPhone, setAgreeChecked, setDisagreeChecked, setSubmitted, resetForm } = formSlice.actions;
+export const { setName, setPhone, setAgreeChecked, setDisagreeChecked, resetForm } = formSlice.actions;
 export default formSlice.reducer;

@@ -1,7 +1,10 @@
+.form__container {
+    position: static;
+}
 .form {
     width: 800px;
     height: 340px;
-    margin: 45px auto 30px;
+    margin: 100px auto 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,22 +20,21 @@
 
 .form__container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Два столбца */
-    grid-template-rows: repeat(3, 64px); /* Три строки, каждая высотой 64px */
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 64px);
+    gap: 20px;
     height: 80%;
     position: relative;
 }
 
 .form__group {
     display: flex;
-    align-items: flex-start; /* Выровнять элементы по верхнему краю */
-    gap: 30px;
+    align-items: flex-start;
+
 }
 
 .form__label {
     margin-top: 0;
-
     display: flex;
     align-items: center;
 }
@@ -52,7 +54,7 @@
 
 .form__input:focus::before,
 .form__input:not(:placeholder-shown)::before {
-    content: ''; /* Убираем подсказку, когда пользователь начинает ввод или уже ввел данные */
+    content: '';
 }
 
 .form__input:focus {
@@ -86,20 +88,20 @@
     cursor: pointer;
     width: 384px;
     height: 64px;
-    max-width: 100%; /* Предотвращает превышение ширины контейнера */
+    max-width: 100%;
 }
 
 .form__button:hover {
-    background-color: #0056b3; /* Более темный оттенок при наведении */
+    background-color: #0056b3;
 }
 
 .form__button:active {
     background-color: #007bff;
-    transform: scale(0.98); /* Легкое уменьшение размера кнопки при нажатии для эффекта */
+    transform: scale(0.98);
 }
 
 .form__actions {
-    grid-column: 1 / span 2; /* Кнопка занимает оба столбца */
+    grid-column: 1 / span 2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,9 +126,9 @@
 }
 .form__group {
     display: flex;
-    flex-direction: column; /* Размещаем лейбл над полем ввода */
+    flex-direction: column;
     align-items: flex-start;
-    gap: 5px; /* Отступ между лейблом и полем ввода */
+    gap: 5px;
     width: 384px;
     height: 64px;
 }
@@ -138,7 +140,7 @@
 
 .form__input {
     padding: 10px;
-    border: 1px solid rgba(194, 200, 205, 1); /* Добавление границы для поля ввода */
+    border: 1px solid rgba(194, 200, 205, 1);
     background: rgba(246, 248, 250, 1);
     border-radius: 4px;
     box-sizing: border-box;
@@ -176,7 +178,7 @@
     padding: 0 5px;
     color: rgba(150, 150, 150, 1);
     transition: all 0.3s ease;
-    pointer-events: none; /* Чтобы текст лейбла не мешал клику по полю */
+    pointer-events: none;
 }
 
 .form__input:focus + .form__label--floating,
@@ -201,26 +203,26 @@
 .form__input {
     width: 100%;
     height: 64px;
-    padding: 10px 40px 10px 10px; /* Отступ справа для кружка и слева для текста */
+    padding: 10px 40px 10px 10px;
     box-sizing: border-box;
 
 }
 
 .success {
-    background-color: #28a745; /* зеленый цвет */
+    background-color: #28a745;
     position: absolute;
     top: 50px
 
 }
 
 .error {
-    background-color: #dc3545; /* красный цвет */
+    background-color: #dc3545;
 }
 
 
 
 .form__input.valid {
-    border-color: #28a745; /* зеленый цвет границы */
+    border-color: #28a745;
     width: 384px;
     height: 64px;
     display: flex;
@@ -228,7 +230,7 @@
 }
 
 .form__input.invalid {
-    border-color: #dc3545; /* красный цвет границы */
+    border-color: #dc3545;
     width: 384px;
     height: 64px;
     display: flex;
@@ -237,15 +239,15 @@
 .form__input-wrapper {
     position: relative;
     width: 100%;
-    height: 64px; /* Высота контейнера должна совпадать с высотой input */
+    height: 64px;
 }
 
 .form__input {
     width: 100%;
     height: 100%;
-    padding: 10px 40px 10px 10px; /* Отступ справа для кружка и слева для текста */
+    padding: 10px 40px 10px 10px;
     box-sizing: border-box;
-    border: 1px solid rgba(194, 200, 205, 1); /* Граница поля ввода */
+    border: 1px solid rgba(194, 200, 205, 1);
     border-radius: 4px;
     background: rgba(246, 248, 250, 1);
     font-size: 18px;
@@ -260,7 +262,7 @@
     padding: 0 5px;
     color: rgba(150, 150, 150, 1);
     transition: all 0.3s ease;
-    pointer-events: none; /* Чтобы текст лейбла не мешал клику по полю */
+    pointer-events: none;
 }
 
 .form__status {
@@ -273,21 +275,28 @@
     border-radius: 50%;
     background-color: transparent;
     transition: background-color 0.3s ease;
-    margin-top: -5px; /* Поднимаем иконку выше */
+    margin-top: -5px;
 }
 
 .form__status i {
     margin-top: -20px ;
-    font-size: 20px; /* Размер иконки Bootstrap */
-    width: 20px;  /* Устанавливает ширину иконки */
-    height: 20px; /* Устанавливает высоту иконки */
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
 
 }
 
 .form__input.valid {
-    border-color: #28a745; /* Зеленый цвет границы */
+    border-color: #28a745;
 }
 
 .form__input.invalid {
-    border-color: rgba(241, 54, 54, 1); /* Красный цвет границы */
+    border-color: rgba(241, 54, 54, 1);
+}
+
+.error-message {
+    color: #dc3545; /* Красный цвет */
+    font-size: 18px; /* Увеличенный размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    text-align: center;
 }
