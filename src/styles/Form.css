@@ -1,0 +1,302 @@
+.form__container {
+    position: static;
+}
+.form {
+    width: 800px;
+    height: 340px;
+    margin: 100px auto 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-title {
+    font-size: 38px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.form__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 64px);
+    gap: 20px;
+    height: 80%;
+    position: relative;
+}
+
+.form__group {
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.form__label {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.form__input {
+    padding: 10px;
+    font-size: 18px;
+    color: rgba(94, 100, 106, 1);
+    border: none;
+    background: rgba(246, 248, 250, 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.form__input:focus::before,
+.form__input:not(:placeholder-shown)::before {
+    content: '';
+}
+
+.form__input:focus {
+    border: 1px solid rgba(194, 200, 205, 1);
+    outline: none;
+    background: white;
+    padding-left: 20px;
+
+}
+
+.form__input:active {
+    border: 1px solid rgba(194, 200, 205, 1);
+    outline: none;
+
+
+}
+
+.form__checkbox {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.form__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 384px;
+    height: 64px;
+    max-width: 100%;
+}
+
+.form__button:hover {
+    background-color: #0056b3;
+}
+
+.form__button:active {
+    background-color: #007bff;
+    transform: scale(0.98);
+}
+
+.form__actions {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form__input:focus {
+    border: 1px solid rgba(194, 200, 205, 1);
+    outline: none;
+    background: white;
+}
+.form__label--floating {
+    position: absolute;
+    z-index: 100;
+    top: 0%;
+    left: -10px;
+    font-size: 18px;
+    color: black;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+
+}
+.form__group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    width: 384px;
+    height: 64px;
+}
+
+.form__label {
+    font-size: 16px;
+    color: black;
+}
+
+.form__input {
+    padding: 10px;
+    border: 1px solid rgba(194, 200, 205, 1);
+    background: rgba(246, 248, 250, 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+
+}
+
+.form__input:focus {
+    border: 1px solid rgba(194, 200, 205, 1);
+    outline: none;
+    background: white;
+}
+.form__group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form__input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgba(194, 200, 205, 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    background: rgba(246, 248, 250, 1);
+}
+
+.form__label--floating {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(246, 248, 250, 1);
+    padding: 0 5px;
+    color: rgba(150, 150, 150, 1);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form__input:focus + .form__label--floating,
+.form__input:not(:placeholder-shown) + .form__label--floating {
+    top: 20%;
+    left: 10px;
+    font-size: 14px;
+    background-color: white;
+    padding: 0 5px;
+}
+
+.form__status {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+
+}
+
+.form__input {
+    width: 100%;
+    height: 64px;
+    padding: 10px 40px 10px 10px;
+    box-sizing: border-box;
+
+}
+
+.success {
+    background-color: #28a745;
+    position: absolute;
+    top: 50px
+
+}
+
+.error {
+    background-color: #dc3545;
+}
+
+
+
+.form__input.valid {
+    border-color: #28a745;
+    width: 384px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__input.invalid {
+    border-color: #dc3545;
+    width: 384px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+.form__input-wrapper {
+    position: relative;
+    width: 100%;
+    height: 64px;
+}
+
+.form__input {
+    width: 100%;
+    height: 100%;
+    padding: 10px 40px 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(194, 200, 205, 1);
+    border-radius: 4px;
+    background: rgba(246, 248, 250, 1);
+    font-size: 18px;
+}
+
+.form__label--floating {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(246, 248, 250, 1);
+    padding: 0 5px;
+    color: rgba(150, 150, 150, 1);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form__status {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    margin-top: -5px;
+}
+
+.form__status i {
+    margin-top: -20px ;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+
+}
+
+.form__input.valid {
+    border-color: #28a745;
+}
+
+.form__input.invalid {
+    border-color: rgba(241, 54, 54, 1);
+}
+
+.error-message {
+    color: #dc3545; /* Красный цвет */
+    font-size: 18px; /* Увеличенный размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    text-align: center;
+}

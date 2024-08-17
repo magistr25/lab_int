@@ -1,16 +1,8 @@
-.App {
+/* Основные стили для App */
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  position: relative;
+  width: 100%;
 }
 
 .App-header {
@@ -28,6 +20,12 @@
   color: #61dafb;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,59 +33,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.hero-section {
-  position: relative;
-  width: 1920px;
-  height: 960px; /* Высота соответствует изображению */
-  overflow: hidden;
-}
-
-.hero-section__image {
-  width: 1920px;
-  height: 100%;
-  object-fit: cover; /* Обеспечивает покрытие всей области */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-/* Основные стили для App */
-.app {
-  position: relative;
-  width: 1920px;;
-}
-
-/* Стили для секции с изображением */
-
-.hero-section__image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Кастомные стили для кнопки */
-.btn-custom {
-  position: absolute;
-  background-color: #f0f4f7;
-  color: #212529;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  top: 615px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 259px;
-  height: 65px;
-  border-radius: 5px;
-  font-size: 18px;
-}
-
-
-.btn-custom:hover {
-  background-color: #e0e6ea;
-}
-.btn-custom:active {
-  background-color: #d6d8db;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }

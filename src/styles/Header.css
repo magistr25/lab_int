@@ -1,6 +1,5 @@
-/* Основные стили для header */
 .header {
-    position: absolute; /* Позиционирование поверх изображения */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -24,14 +23,13 @@
 .logo {
     display: flex;
     align-items: center;
-    /* Возможно, добавьте немного отступа, чтобы логотип не был прижат к краям */
     margin-left: 380px;
 }
 
 .logo__icon {
-    width: 120px; /* Заданная ширина логотипа */
-    height: 24px; /* Заданная высота логотипа */
-    object-fit: contain; /* Сохранение пропорций изображения */
+    width: 120px;
+    height: 24px;
+    object-fit: contain;
 }
 
 .logo__text {

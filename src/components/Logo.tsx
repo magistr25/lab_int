@@ -1,9 +1,10 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 
-const Logo = () => {
+const Logo: React.FC = () => {
     return (
         <div className="logo">
-            <img src="logo.png" alt="Icon" className="logo__icon" />
+            <img className="logo__icon" src={logo} alt="Logo"  />
 
         </div>
     );
