@@ -1,5 +1,4 @@
 .nav {
-    background-color: #4c90f9; /* Синий фон */
     background-color: rgba(0, 0, 0, 0);
     padding-right: 340px;
 }
@@ -9,26 +8,31 @@
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* Распределение элементов */
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 
 }
 
 .nav__item {
-    margin: 0 15px; /* Отступы между элементами */
+    margin: 0 15px;
 }
 
 .nav__link {
     text-decoration: none;
-    color: #ffffff; /* Цвет текста */
+    color: #ffffff;
 }
 .nav__link:hover {
-    text-decoration: underline; /* Подчёркивание при наведении */
+    text-decoration: underline;
 }
 
 .nav__icon {
     width: 24px;
     height: 24px;
     object-fit: contain;
+}
+.nav__link--active {
+
+    color: #ffffff;
+    text-decoration: underline;
 }
