@@ -1,13 +1,12 @@
 .step-guide {
     width: 1216px;
-    padding: 80px 20px;
+    padding: 80px 0;
     text-align: center;
     margin: 0 auto;
 
 }
 
 .step-guide__title {
-    font-size: 28px;
     margin-bottom: 75px;
     color: #333;
     font-weight: bold;
@@ -41,8 +40,8 @@
 }
 
 .step-guide__icon:hover {
-    transform: scale(1.1); /* Увеличение изображения при наведении */
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.6); /* Добавляем голубое свечение */
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.6);
 }
 
 .step-guide__step-title {
@@ -58,4 +57,132 @@
     font-size: 16px;
     color: #666;
     margin: 0 45px 0 0;
+}
+
+
+@media (max-width: 768px) {
+    .step-guide {
+        width: 100%;
+        margin: 0;
+        padding-bottom: 38px;
+    }
+    .step-guide__title {
+        width: 100%;
+        margin-top: -18px;
+        margin-bottom: 40px;
+        font-size: 38px;
+        margin-left: 0;
+        text-align: center;
+    }
+    .step-guide__steps {
+        display: grid;
+        margin-left: 30px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .step-guide__step {
+        width: 100%;
+        text-align: left;
+    }
+    .step-guide__step {
+        width: 470px;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-right: 30px;
+    }
+
+    .step-guide__icon {
+        margin-bottom: 0;
+        margin-right: 15px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .step-guide__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step-guide__step-title {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 5px;
+        white-space: nowrap;
+    }
+
+    .step-guide__step-description {
+        font-size: 14px;
+        margin: 0;
+    }
+}
+
+
+
+@media (max-width: 376px) {
+    .step-guide .step-guide__title  {
+        width: 100%;
+        margin-top: -18px;
+        margin-bottom: 20px;
+        font-size: 23px;
+        margin-left: 0;
+        text-align: center;
+
+
+    }
+    .step-guide__steps {
+        margin-left: 10px;
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .step-guide__step {
+        width: 450px;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .step-guide__icon {
+        margin-bottom: 0;
+        margin-right: 15px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .step-guide__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step-guide__step-title {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 5px;
+        white-space: nowrap;
+
+
+    }
+
+    .step-guide__step-description {
+        font-size: 14px;
+        margin: 0;
+        white-space: normal;
+    }
+}
+@media (max-width: 321px){
+    .step-guide__step-title {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 5px;
+        white-space: wrap;
+
+
+    }
 }

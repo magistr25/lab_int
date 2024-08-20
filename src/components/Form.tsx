@@ -6,7 +6,6 @@ import {
     setPhone,
     setAgreeChecked,
     setDisagreeChecked,
-    resetForm,
     submitForm,
 } from '../redux/formSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -81,6 +80,12 @@ const Form: React.FC = () => {
                         </div>
                     </div>
                     <div className="form__group">
+                        {/* Подсказка видна только когда пользователь начинает вводить текст */}
+                        {phone.trim() !== '' && (
+                            <small className="form__hint">
+                                Пожалуйста, введите последние 10 цифр вашего телефона.
+                            </small>
+                        )}
                         <div className="form__input-wrapper">
                             <input
                                 type="text"

@@ -35,9 +35,11 @@ const StepGuide = () => {
             <div className="step-guide__steps">
                 {steps.map((step, index) => (
                     <div key={index} className="step-guide__step">
-                        <img className="step-guide__icon" src={step.icon} alt={step.title} />
-                        <p className="step-guide__step-title">{step.title}</p>
-                        <p className="step-guide__step-description">{step.description}</p>
+                        <img className="step-guide__icon" src={step.icon} alt={step.title}/>
+                        <div className="step-guide__info">
+                            <p className="step-guide__step-title">{step.title}</p>
+                            <p className="step-guide__step-description">{step.description}</p>
+                        </div>
                     </div>
                 ))}
             </div>

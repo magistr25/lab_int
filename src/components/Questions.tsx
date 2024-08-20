@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import '../styles/Questions.css';
 
 interface QuestionItemProps {
@@ -8,6 +8,16 @@ interface QuestionItemProps {
 
 const QuestionItem: React.FC<QuestionItemProps> = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+        if (contentRef.current && isOpen) {
+            setHeight(contentRef.current.scrollHeight);
+        } else {
+            setHeight(0);
+        }
+    }, [isOpen]);
 
     const toggleOpen = () => {
         setIsOpen(!isOpen);
@@ -17,10 +27,14 @@ const QuestionItem: React.FC<QuestionItemProps> = ({ question, answer }) => {
         <div className="question-item">
             <div className="question-header" onClick={toggleOpen}>
                 <h3>{question}</h3>
-                <button onClick={toggleOpen}>{isOpen ? '×' : '+'}</button>
+                <button>{isOpen ? '×' : '+'}</button>
             </div>
             {answer && (
-                <div className={`question-answer ${isOpen ? 'open' : ''}`}>
+                <div
+                    ref={contentRef}
+                    className={`question-answer ${isOpen ? 'open' : ''}`}
+                    style={{ height: `${height}px` }}
+                >
                     <p>{answer}</p>
                 </div>
             )}

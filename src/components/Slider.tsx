@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import { nextSlide, prevSlide, setSlideIndex } from '../redux/sliderSlice';
+import { useSwipeable } from 'react-swipeable';
 import '../styles/Slider.css';
-import defaultAvatar from '../assets/MockPhoto.png'; // Дефолтный аватар
-import arrowLeft from '../assets/arrow-left.png';  // Импортируем изображения
+import defaultAvatar from '../assets/MockPhoto.png';
+import arrowLeft from '../assets/arrow-left.png';
 import arrowRight from '../assets/arrow-right.png';
 
 const Slider: React.FC = () => {
-    const itemsPerPage = 3;
+    const [itemsPerPage, setItemsPerPage] = useState(3);
     const dispatch: AppDispatch = useDispatch();
     const { data, currentIndex } = useSelector((state: RootState) => state.slider);
+
+    useEffect(() => {
+        const updateItemsPerPage = () => {
+            if (window.innerWidth >= 1024) {
+                setItemsPerPage(3);
+            } else if (window.innerWidth >= 768) {
+                setItemsPerPage(2);
+            } else {
+                setItemsPerPage(1);
+            }
+        };
+
+        updateItemsPerPage();
+        window.addEventListener('resize', updateItemsPerPage);
+
+        return () => {
+            window.removeEventListener('resize', updateItemsPerPage);
+        };
+    }, []);
 
     const handlePrevClick = () => {
         dispatch(prevSlide());
@@ -38,16 +58,27 @@ const Slider: React.FC = () => {
         return data.slice(startIndex, startIndex + itemsPerPage);
     };
 
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: handleNextClick,
+        onSwipedRight: handlePrevClick,
+        preventScrollOnSwipe: true,
+        trackMouse: true, // Поддержка свайпа при помощи мыши на десктопах
+    });
+
     return (
-        <div className="slider-container">
+        <div className="slider-container" {...swipeHandlers}>
             <div className="slider">
                 <h1 className="slider__title">Отзывы</h1>
-                <button className="slider__arrow-left" onClick={handlePrevClick}>
-                    <img src={arrowLeft} alt="Previous" />
-                </button>
-                <button className="slider__arrow-right" onClick={handleNextClick}>
-                    <img src={arrowRight} alt="Next" />
-                </button>
+                {itemsPerPage === 3 && (
+                    <>
+                        <button className="slider__arrow-left" onClick={handlePrevClick}>
+                            <img src={arrowLeft} alt="Previous" />
+                        </button>
+                        <button className="slider__arrow-right" onClick={handleNextClick}>
+                            <img src={arrowRight} alt="Next" />
+                        </button>
+                    </>
+                )}
                 <div className="slider__carousel">
                     <div className="slider__item-group">
                         {getVisibleData().map((item, idx) => (

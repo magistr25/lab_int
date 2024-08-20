@@ -23,7 +23,7 @@
     color: #ffffff;
 }
 .nav__link:hover {
-    text-decoration: underline; /* Подчёркивание при наведении */
+    text-decoration: underline;
 }
 
 .nav__icon {
